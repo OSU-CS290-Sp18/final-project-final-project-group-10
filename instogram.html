@@ -6,7 +6,7 @@ ome of the stuff from twittor-->
   <head>
 
     <meta charset="utf-8">
-    <title>instogram</title>
+    <title>inst-o-gram</title>
 
     <!-- This is a stylesheet that includes the font you should use: Roboto -->
     <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
@@ -24,7 +24,7 @@ ome of the stuff from twittor-->
 
     <header>
       <!-- The <i> tag below includes the bullhorn icon from Font Awesome -->
-      <a href="#"><h1 class="site-title"><i class="fas fa-camera-retro"></i>instogram</h1></a>
+      <a href="#"><h1 class="site-title"><i class="fas fa-camera-retro"></i>inst-o-gram</h1></a>
 
       <nav class="navbar">
         <ul class="navlist">
@@ -43,11 +43,12 @@ ome of the stuff from twittor-->
 
       <article class="post">
         <div class="post-icon">
-          <i class="fas fa-bullhorn"></i>
+          <i class="fas fa-user-circle"></i>
         </div>
         <div class="post-content">
           <img src="https://www.w3schools.com/images/w3schools_green.jpg">
 
+          <i class="far fa-heart"></i>
           <p class="post-likes">
             100 likes
           </p>
@@ -60,25 +61,29 @@ ome of the stuff from twittor-->
 
     </main>
 
-    <button type="button" id="create-twit-button"><i class="fas fa-bullhorn"></i></button>
+    <button type="button" id="create-twit-button"><i class="fas fa-plus-square"></i></button>
 
     <div id="modal-backdrop" class="hidden"></div>
     <div id="create-twit-modal" class="hidden">
       <div class="modal-dialog">
 
         <div class="modal-header">
-          <h3>Create a Twit</h3>
+          <h3>make a post!</h3>
           <button type="button" class="modal-close-button">&times;</button>
         </div>
 
         <div class="modal-body">
-          <div class="twit-input-element">
-            <label for="twit-text-input">Twit text</label>
-            <textarea id="twit-text-input"></textarea>
+          <div class="post-photo-element">
+            <label for="post-photo-input">Photo URL</label>
+            <textarea id="post-photo-input"></textarea>
+	  </div>
+          <div class="post-input-element">
+            <label for="photo-comment-input">Photo comment</label>
+            <textarea id="photo-comment-input"></textarea>
           </div>
-          <div class="twit-input-element">
-            <label for="twit-attribution-input">Author</label>
-            <input type="text" id="twit-attribution-input">
+          <div class="post-input-element">
+            <label for="post-attribution-input">Author</label>
+            <input type="text" id="post-attribution-input">
           </div>
         </div>
 
