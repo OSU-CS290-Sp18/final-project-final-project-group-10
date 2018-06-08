@@ -11,3 +11,211 @@
 *Home, search, plus, filled heart, person as nav-bar pinned to bottom of page
 *Nav bar background should be lighter gray
 */
+header{
+  background: -moz-linear-gradient(180deg, #863AA8 11%, #C355F5 89%);/* FF3.6+ */
+  background: -webkit-gradient(linear, 180deg, color-stop(11%, 863AA8), color-stop(89%, C355F5));/* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(180deg, #863AA8 11%, #C355F5 89%);/* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(180deg, #863AA8 11%, #C355F5 89%);/* Opera 11.10+ */
+  background: -ms-linear-gradient(180deg, #863AA8 11%, #C355F5 89%);/* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1301FE', endColorstr='#F4F60C', GradientType='1'); /* for IE */
+  background: linear-gradient(180deg, #863AA8 11%, #C355F5 89%);/* W3C */
+  text-align: center;
+}
+
+header a{
+  text-decoration: none;
+}
+
+.site-title{
+  margin: 0;
+  padding: 10px;
+  font-size: 50px;
+  font-weight: normal;
+	color: #ffffff;
+}
+
+body {
+  font-family: 'Roboto', helvetica, sans-serif;
+  font-size: 1em;
+  background: -moz-radial-gradient(50% 50%, circle cover, #CCCCCC 0, #777777 100%);/* FF3.6+ */
+  background: -webkit-radial-gradient(50% 50%, circle cover, #CCCCCC 0, #777777 100%);/* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(50% 50%, circle cover, #CCCCCC 0, #777777 100%);/* Opera 11.10+ */
+  background: -ms-radial-gradient(50% 50%, circle cover, #CCCCCC 0, #777777 100%);/* IE10+ */
+  background: radial-gradient(50% 50%, circle cover, #CCCCCC 0, #777777 100%);/* W3C */
+  margin: 0px;
+  color: white;
+}
+
+article {
+  background-color: rgba(164, 72, 206, .8);
+  border-radius: 10px;
+  margin: 5%;
+  padding: 2%;
+}
+
+.post-photo-caption{
+  color: black;
+  background-color: white;
+}
+
+ul{
+  align: center;
+}
+
+li{
+  display: inline-block;
+}
+
+button{
+  border-radius: 50%;
+}
+
+.navbar{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background: -moz-linear-gradient(0deg, #863AA8 11%, #C355F5 89%);/* FF3.6+ */
+  background: -webkit-gradient(linear, 0deg, color-stop(11%, 863AA8), color-stop(89%, C355F5));/* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(0deg, #863AA8 11%, #C355F5 89%);/* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(0deg, #863AA8 11%, #C355F5 89%);/* Opera 11.10+ */
+  background: -ms-linear-gradient(0deg, #863AA8 11%, #C355F5 89%);/* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1301FE', endColorstr='#F4F60C', GradientType='1'); /* for IE */
+  background: linear-gradient(0deg, #863AA8 11%, #C355F5 89%);/* W3C */
+}
+
+/* modal */
+#modal-backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+#create-post-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1010;
+  overflow: scroll;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-dialog {
+  width: auto;
+  max-width: 600px;
+  min-width: 350px;
+  min-height: 300px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.modal-header {
+  position: relative;
+  padding: 10px 20px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.modal-close-button {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 24px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.post-input-element {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.post-input-element label {
+  font-weight: 600;
+  flex: 1 75px;
+  margin-right: 10px;
+}
+
+.post-input-element input,
+.post-input-element textarea {
+  flex: 6 200px;
+  padding: 8px;
+  font-size: 20px;
+  border: 1px solid #aaa;
+}
+
+.post-input-element textarea {
+  min-height: 64px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 10px 20px 10px;
+}
+
+.modal-footer button {
+  font-size: 20px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.modal-footer .modal-cancel-button:hover {
+  background-color: #eee;
+}
+
+.modal-footer .modal-accept-button {
+  background-color: #a448ce;
+  color: #fff;
+}
+
+.modal-footer .modal-accept-button:hover {
+  background-color: #a448ce;
+}
+
+/* colors */
+.white{
+  color: #ffffff;
+}
+
+.white-bg{
+  background-color: #ffffff;
+}
+
+.purple{
+  color: #a448ce;
+}
+
+.purple-bg{
+  background-color: #a448ce;
+}
+
+/* embellishments */
+.gradient{
+  background: linear-gradient(180deg, #863AA8 11%, #C355F5 89%);
+}

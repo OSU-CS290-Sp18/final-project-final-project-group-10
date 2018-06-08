@@ -21,53 +21,47 @@ ome of the stuff from twittor-->
   </head>
 
   <body>
-
     <header>
       <!-- The <i> tag below includes the bullhorn icon from Font Awesome -->
       <a href="#"><h1 class="site-title"><i class="fas fa-camera-retro"></i>inst-o-gram</h1></a>
     </header>
 
     <main class="insto-container">
-
       <article class="post">
         <div class="post-author-content">
-          <i class="fas fa-user-circle"></i>
-          <p class="post-author">IloveCS123</p>
+          <p class="post-author"><i class="fas fa-user-circle"></i>IloveCS123</p>
         </div>
 
-        <div class="post-picture">
-           <img src="https://www.w3schools.com/images/w3schools_green.jpg">
-        </div>
-        <div class="post-content">
-         
-
-          <i class="far fa-heart"></i>
-          <p class="post-likes">
-            100 likes
-          </p>
-          <p class="post-caption">
-            Ready for summer
-          </p>
+        <div class="post-photo-caption">
+          <div class="post-picture">
+            <img src="https://www.w3schools.com/images/w3schools_green.jpg">
+          </div>
+        
+          <div class="post-content">
+            <p class="post-likes">
+              <i class="far fa-heart"></i>100 likes
+            </p>
+            <p class="post-caption">
+              Ready for summer
+            </p>
+          </div>
         </div>
       </article>
-
-
     </main>
-	<nav class="navbar">
-		<ul class="nav list" >
-    <li class="navitem navlink"> <button type="button" id="home-page-button"><i class="fas fa-home"></i></button></li>
-    <li class="navitem navlink"><button type="button" id="search-button"><i class="fas fa-search"></i></button></li>	  
-    <li class="navitem navlink"><button type="button" id="create-post-button"><i class="fas fa-plus-square"></i></button></li>
-    <li class="navitem navlink"><button type="button" id="activity-page-button"><i class="fas fa-heart"></i></button></li>
-    <li class="navitem navlink"><button type="button" id="user-profile-button"><i class="fas fa-user"></i></button></li>
-		</ul>
+	  <nav class="navbar">
+		  <ul class="nav-list">
+        <li class="navitem navlink"><button type="button" id="home-page-button"><i class="fas fa-home"></i></button></li>
+        <li class="navitem navlink"><button type="button" id="search-button"><i class="fas fa-search"></i></button></li>	  
+        <li class="navitem navlink"><button type="button" id="create-post-button"><i class="fas fa-plus-square"></i></button></li>
+        <li class="navitem navlink"><button type="button" id="activity-page-button"><i class="fas fa-heart"></i></button></li>
+        <li class="navitem navlink"><button type="button" id="user-profile-button"><i class="fas fa-user"></i></button></li>
+		  </ul>
 	  </nav>
     <div id="modal-backdrop" class="hidden"></div>
     <div id="create-post-modal" class="hidden">
       <div class="modal-dialog">
-
         <div class="modal-header">
-          <h3>make a post!</h3>
+          <h3>Make a post!</h3>
           <button type="button" class="modal-close-button">&times;</button>
         </div>
 
@@ -76,10 +70,10 @@ ome of the stuff from twittor-->
             <label for="post-attribution-input">Author</label>
             <input type="text" id="post-attribution-input">
           </div>
-          <div class="post-photo-element">
+          <div class="post-input-element">
             <label for="post-photo-input">Photo URL</label>
-            <textarea id="post-photo-input"></textarea>
-	  </div>
+            <input type="text" id="post-photo-input">
+	        </div>
           <div class="post-input-element">
             <label for="photo-caption-input">Photo caption</label>
             <textarea id="photo-caption-input"></textarea>
@@ -90,11 +84,8 @@ ome of the stuff from twittor-->
           <button type="button" class="modal-cancel-button">Cancel</button>
           <button type="button" class="modal-accept-button">Create Post</button>
         </div>
-
       </div>
     </div>
-
   </body>
-
 </html>
 
