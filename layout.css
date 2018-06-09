@@ -70,6 +70,17 @@ button{
   border-radius: 50%;
 }
 
+/* delete this later maybe*/
+
+#create-post-button:hover,
+#create-post-button:focus {
+  background-color: #a448ce;
+  cursor: pointer;
+}
+
+
+/* ------- */
+
 .navbar{
   position: fixed;
   bottom: 0px;
