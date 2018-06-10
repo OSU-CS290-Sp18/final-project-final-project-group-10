@@ -1,172 +1,155 @@
 /*client side java
 */
 
-var allPosts = [];
+/* when button is clicked */
+var hidden = document.getElementsByClassName('hidden');
+var button = document.getElementById('create-post-button');
+button.addEventListener('click', callOnce);
 
-function handleModalAcceptClick() {
+function callOnce() {
+	console.log('Button clicked!');
+	hidden[0].style.display = "block";
+	hidden[1].style.display = "block";
 
-    var postCaption = document.getElementById('photo-caption-input').value;
-    var postAuthor = document.getElementById('post-attribution-input').value;
-    var postImage = document.getElementById('post-photo-input').value;
-    /*
-     * Only generate the new Post if the user supplied values for both the Post
-     * caption and the Post attribution.  Give them an alert if they didn't.
-     */
-    if (postCaption && postAuthor && postImage) {
-  
-      allPosts.push({
-        author: postAuthor,
-        image: postImage,
-        text: postCaption
-      });  
-  
-      clearSearchAndReinsertPosts();
-  
-      hideCreatePostModal();
-  
-    } else {
-  
-      alert('You must specify both the text and the author of the post!');
-  
-    }
+  document.getElementById('post-attribution-input').value = "";
+  document.getElementById('post-photo-input').value = "";
+	document.getElementById('photo-caption-input').value = "";
+}
+/* control the input box */
+var cancel = document.getElementsByClassName('modal-cancel-button');
+cancel[0].addEventListener('click', function () {
+	hidden[0].style.display = "none";
+	hidden[1].style.display = "none";
+});
+var close = document.getElementsByClassName('modal-close-button');
+close[0].addEventListener('click', function () {
+	hidden[0].style.display = "none";
+	hidden[1].style.display = "none";
+});
+
+
+/*set accept up to recieve input */
+var accept = document.getElementsByClassName('modal-accept-button');
+
+accept[0].addEventListener('click', function() {
+	var post = document.createElement('article')
+	var divAuthor = document.createElement('div')
+  var divPhoto = document.createElement('div')
+  var divURL = document.createElement('div')
+  var divContent = document.createElement('div')
+  var iuser    = document.createElement('i')
+  var iLikes   = document.createElement('i')
+  var authorLink = document.createElement('a')
+  /* create author */
+  var author = document.createElement('p')
+  var a = document.createTextNode(document.getElementById('post-attribution-input').value.trim());
+  var aLink = document.getElementById('post-attribution-input').value.trim();
+  /* create photo link */
+  var img = document.createElement('img');
+  var link = document.getElementById('post-photo-input').value.trim();
+
+  /* create photo caption */
+  var plikes = document.createElement('p')
+	var description = document.createElement('p')
+	var caption = document.createTextNode(document.getElementById('photo-caption-input').value)
+
+	if (document.getElementById('post-photo-input').value)
+	{
+	if (document.getElementById('post-attribution-input').value)
+	{
+  if (document.getElementById('photo-caption-input').value)
+
+  /* assign author */
+	post.classList.add('post');
+  divAuthor.classList.add('post-author-content');
+  author.classList.add('post-author');
+  iuser.classList.add('fas','fa-user-circle');
+  authorLink.setAttribute("href", "/instogram/users/" + aLink); 
+  /* assign image */
+  divPhoto.classList.add('post-photo-caption');
+  divURL.classList.add('post-picture');
+  img.src = link;
+  /* assign image content */
+  divContent.classList.add('post-content');
+  plikes.classList.add('post-likes');
+  iLikes.classList.add('far','fa-heart');
+  description.classList.add('post-caption');
+
+ /* store author */
+  author.appendChild(iuser);
+  authorLink.appendChild(a);
+  author.appendChild(authorLink);
+  divAuthor.appendChild(author);
+ /* store photo */
+  divURL.appendChild(img);
+  divPhoto.appendChild(divURL);
+ /* stor photo caption */
+  plikes.appendChild(iLikes);
+  description.appendChild(caption);
+  divContent.appendChild(description);
+  divContent.appendChild(plikes);
+  divPhoto.appendChild(divContent);
+ /* add to the main post */
+	post.appendChild(divAuthor);
+  post.appendChild(divPhoto);
+
+	var parent = document.getElementsByClassName('insto-container');
+
+	parent[0].appendChild(post);
+
+	hidden[0].style.display = "none";
+	hidden[1].style.display = "none";
+
+} else { alert("fill In the auther box");}
+} else { alert("fill In all caption boxes");}
+});
+
+
+var elems = document.getElementsByClassName('post');
+var allElems = [];
+for (var i = 0; i < elems.length; i++) {
+  allElems.push(elems[i]);
+}
+/* search fuction
+
+var search = document.getElementById('navbar-search-input');
+
+search.addEventListener('input', function() {
+
+	var parent = document.getElementsByClassName('post-container');
+	var elems = document.getElementsByClassName('post');
+	
+	if (elems.length > allElems.length)
+	{
+		for( var i = allElems.length; i < elems.length; i++)
+		{
+			allElems.push(elems[i]);
+		}
+	}
+
+	for( var i = 0; i < allElems.length; i++)
+	{
+		parent[0].appendChild(allElems[i]);
+	}
+
+	var navbar = document.getElementById('navbar-search-input').value;
+	var caption = document.getElementsByClassName('post-caption');
+	var author = document.getElementsByClassName('post-attribution');
+	var post = document.getElementsByClassName('post');
+
+	var q = post.length;
+
+	for (var i = 0; i < q; i++) {
+ 	 	if (caption[i].captionContent.includes(navbar) || author[i].captionContent.includes(navbar) ){
+	}
+	else
+	{
+		console.log(caption[i].captionContent.includes(navbar) );
+		post[i].remove();
+		var q = post.length;
+		i--;
+	}
 }
 
-/*clear post inputs */
-function clearPostInputValues() {
-
-    var postInputElems = document.getElementsByClassName('post-input-element');
-    for (var i = 0; i < postInputElems.length; i++) {
-      var input = postInputElems[i].querySelector('input, textarea');
-      input.value = '';
-    }
-  
-  }
-
-
-    /* search items*/
-    function clearSearchAndReinsertPosts() {
-
-        document.getElementById('navbar-search-input').value = "";
-        doSearchUpdate();
-      
-      }
-
-    function doSearchUpdate() {
-        /* no navbar searchbox? */
-        var searchQuery = document.getElementById('navbar-search-input').value;
-      
-        var postContainer = document.querySelector('.post-container');
-        if (postContainer) {
-          while (postContainer.lastChild) {
-            postContainer.removeChild(postContainer.lastChild);
-          }
-        }
-      
-        /*
-         * Loop through the collection of all postss and add posts back into the DOM
-         */
-        allPosts.forEach(function (post) {
-          if (postMatchesSearchQuery(post, searchQuery)) {
-            insertNewPost(post.author, post.photo, post.image);
-          }
-        });
-      
-      }
-    function postMatchesSearchQuery(post, searchQuery) {
-        /* An empty query matches all posts.*/
-        if (!searchQuery) {
-          return true;
-        }
-      
-        /*
-         * The search query matches the post if either the post's text or the post's
-         * author contains the search query.
-         */
-        searchQuery = searchQuery.trim().toLowerCase();
-        return (post.author + " " + post.caption).toLowerCase().indexOf(searchQuery) >= 0;
-      }
-
-
-
-    /* show the text input */
-    function showCreatePostModal() {
-
-        var modalBackdrop = document.getElementById('modal-backdrop');
-        var createPostModal = document.getElementById('create-post-modal');
-      
-        // Show the modal and its backdrop.
-        modalBackdrop.classList.remove('hidden');
-        createPostModal.classList.remove('hidden');
-      
-      }
-
-      /* hide the text input */
-      function hideCreatePostModal() {
-
-        var modalBackdrop = document.getElementById('modal-backdrop');
-        var createPostModal = document.getElementById('create-post-modal');
-      
-        // Hide the modal and its backdrop.
-        modalBackdrop.classList.add('hidden');
-        createPostModal.classList.add('hidden');
-      
-        clearPostInputValues();
-      
-      }
-
-
-
-      function parsePostElem(postElem) {
-
-        var post = {};
-      
-        var postTextElem = postElem.querySelector('.post-caption');
-        post.text = postTextElem.textContent.trim();
-      
-        var postAttributionLinkElem = postElem.querySelector('.post-author a');
-        post.author = postAttributionLinkElem.textContent.trim();
-      
-        return post;
-      
-      }
-
-      /* listen for events */
-      window.addEventListener('DOMContentLoaded', function () {
-
-        // Remember all of the existing Posts in an array that we can use for search.
-        var PostElemsCollection = document.getElementsByClassName('post');
-        for (var i = 0; i < PostElemsCollection.length; i++) {
-          allPosts.push(parsePostElem(PostElemsCollection[i]));
-        }
-      
-        var createPostButton = document.getElementById('create-post-button');
-        if (createPostButton) {
-          createPostButton.addEventListener('click', showCreatePostModal);
-        }
-      
-        var modalCloseButton = document.querySelector('#create-post-modal .modal-close-button');
-        if (modalCloseButton) {
-          modalCloseButton.addEventListener('click', hideCreatePostModal);
-        }
-      
-        var modalCancalButton = document.querySelector('#create-post-modal .modal-cancel-button');
-        if (modalCancalButton) {
-          modalCancalButton.addEventListener('click', hideCreatePostModal);
-        }
-      
-        var modalAcceptButton = document.querySelector('#create-post-modal .modal-accept-button');
-        if (modalAcceptButton) {
-          modalAcceptButton.addEventListener('click', handleModalAcceptClick);
-        }
-      
-        var searchButton = document.getElementById('navbar-search-button');
-        if (searchButton) {
-          searchButton.addEventListener('click', doSearchUpdate);
-        }
-      
-        var searchInput = document.getElementById('navbar-search-input');
-        if (searchInput) {
-          searchInput.addEventListener('input', doSearchUpdate);
-        }
-      
-      });
+});
+*/
