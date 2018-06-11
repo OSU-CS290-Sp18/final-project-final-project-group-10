@@ -1,10 +1,10 @@
 /*
-*Thus will be the css file 
+*This will be the css file
 */
 /*
 *Notes:
 *Header needs to be centered, header background #a448ce, text white
-*Post needs to be in own box 
+*Post needs to be in own box
 *Username top left of post box
 *Photo needs to be center
 *Comment and like directly under photo
@@ -18,7 +18,7 @@ header{
   background: -o-linear-gradient(180deg, #863AA8 11%, #C355F5 89%);/* Opera 11.10+ */
   background: -ms-linear-gradient(180deg, #863AA8 11%, #C355F5 89%);/* IE10+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1301FE', endColorstr='#F4F60C', GradientType='1'); /* for IE */
-  background: linear-gradient(180deg, #863AA8 11%, #C355F5 89%);/* W3C */
+  background: linear-gradient(180deg, #D0F3FB 11%, #3E9D9E 89%);/* W3C */
   text-align: center;
 }
 
@@ -27,6 +27,7 @@ header a{
 }
 
 .site-title{
+  font-family: 'Dosis', sans-serif;
   margin: 0;
   padding: 10px;
   font-size: 50px;
@@ -35,10 +36,10 @@ header a{
 }
 
 body {
-  font-family: 'Roboto', helvetica, sans-serif;
+  font-family: 'Dosis', sans-serif;
   font-size: 1em;
   background: -moz-radial-gradient(50% 50%, circle cover, #CCCCCC 0, #777777 100%);/* FF3.6+ */
-  background: -webkit-radial-gradient(50% 50%, circle cover, #CCCCCC 0, #777777 100%);/* Chrome10+,Safari5.1+ */
+  /* background: -webkit-radial-gradient(50% 50%, circle cover, #CCCCCC 0, #777777 100%);/* Chrome10+,Safari5.1+ */ */
   background: -o-radial-gradient(50% 50%, circle cover, #CCCCCC 0, #777777 100%);/* Opera 11.10+ */
   background: -ms-radial-gradient(50% 50%, circle cover, #CCCCCC 0, #777777 100%);/* IE10+ */
   background: radial-gradient(50% 50%, circle cover, #CCCCCC 0, #777777 100%);/* W3C */
@@ -47,7 +48,8 @@ body {
 }
 
 article {
-  background-color: rgba(164, 72, 206, .8);
+  background-color: #D0F4DD;
+  /* background-color: rgba(164, 72, 206, .8); */
   border-radius: 10px;
   margin: 5%;
   padding: 2%;
@@ -67,14 +69,22 @@ li{
 }
 
 button{
-  border-radius: 50%;
+  /* border-radius: 50%; */
+  font-size: 20px;
+  background-color: inherit;
+  border: none;
 }
 
+li.navitem.navlink{
+  padding-right: 20px;
+}
 /* delete this later maybe*/
 
 #create-post-button:hover,
 #create-post-button:focus {
-  background-color: #a448ce;
+  color: white;
+  /* background-color: white; */
+  /* background-color: #a448ce; */
   cursor: pointer;
 }
 
@@ -82,6 +92,7 @@ button{
 /* ------- */
 
 .navbar{
+  text-align: center;
   position: fixed;
   bottom: 0px;
   width: 100%;
@@ -91,7 +102,7 @@ button{
   background: -o-linear-gradient(0deg, #863AA8 11%, #C355F5 89%);/* Opera 11.10+ */
   background: -ms-linear-gradient(0deg, #863AA8 11%, #C355F5 89%);/* IE10+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1301FE', endColorstr='#F4F60C', GradientType='1'); /* for IE */
-  background: linear-gradient(0deg, #863AA8 11%, #C355F5 89%);/* W3C */
+  background: linear-gradient(180deg, #D0F3FB 11%, #3E9D9E 89%);/* W3C */
 }
 
 /* modal */
@@ -120,6 +131,7 @@ button{
 }
 
 .modal-dialog {
+  color: black;
   width: auto;
   max-width: 600px;
   min-width: 350px;
@@ -201,12 +213,12 @@ button{
 }
 
 .modal-footer .modal-accept-button {
-  background-color: #a448ce;
+  background-color: #3e9cb0;
   color: #fff;
 }
 
 .modal-footer .modal-accept-button:hover {
-  background-color: #a448ce;
+  background-color: #3e9cb0;
 }
 
 /* colors */
@@ -229,4 +241,25 @@ button{
 /* embellishments */
 .gradient{
   background: linear-gradient(180deg, #863AA8 11%, #C355F5 89%);
+}
+
+.error-container{
+  margin-top: 50px;
+  text-align: center;
+}
+
+.error-container h2{
+  color: black;
+  margin: 10px 0;
+  font-size: 100px;
+}
+
+.error-container h3{
+  color: black;
+  margin: 10px 0;
+  font-size: 40px;
+}
+
+svg.svg-inline--fa.fa-camera-retro.fa-w-16 {
+  padding-right: 10px;
 }

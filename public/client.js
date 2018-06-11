@@ -64,7 +64,7 @@ accept[0].addEventListener('click', function() {
   divAuthor.classList.add('post-author-content');
   author.classList.add('post-author');
   iuser.classList.add('fas','fa-user-circle');
-  authorLink.setAttribute("href", "/instogram/users/" + aLink); 
+  authorLink.setAttribute("href", "/instogram/users/" + aLink);
   /* assign image */
   divPhoto.classList.add('post-photo-caption');
   divURL.classList.add('post-picture');
@@ -83,11 +83,13 @@ accept[0].addEventListener('click', function() {
  /* store photo */
   divURL.appendChild(img);
   divPhoto.appendChild(divURL);
- /* stor photo caption */
+ /* store photo caption */
   plikes.appendChild(iLikes);
-  description.appendChild(caption);
-  divContent.appendChild(description);
+  // description.appendChild(caption);
+  // divContent.appendChild(description);
   divContent.appendChild(plikes);
+	description.appendChild(caption);
+  divContent.appendChild(description);
   divPhoto.appendChild(divContent);
  /* add to the main post */
 	post.appendChild(divAuthor);
@@ -100,8 +102,8 @@ accept[0].addEventListener('click', function() {
 	hidden[0].style.display = "none";
 	hidden[1].style.display = "none";
 
-} else { alert("fill In the auther box");}
-} else { alert("fill In all caption boxes");}
+} else { alert("Fill in the author box");}
+} else { alert("Fill in all the caption boxes");}
 });
 
 
@@ -118,7 +120,7 @@ search.addEventListener('input', function() {
 
 	var parent = document.getElementsByClassName('post-container');
 	var elems = document.getElementsByClassName('post');
-	
+
 	if (elems.length > allElems.length)
 	{
 		for( var i = allElems.length; i < elems.length; i++)
