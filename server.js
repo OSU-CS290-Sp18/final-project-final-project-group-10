@@ -1,10 +1,13 @@
 /*server side java*/
 var express = require('express');
 var path = require('path');
+var exphbs = require('express-handlebars');
 var app = express();
 
 var port = process.env.PORT || 3000;
 
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/public/instogram.html'));
