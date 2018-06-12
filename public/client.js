@@ -53,6 +53,7 @@ accept[0].addEventListener('click', function() {
 
 		request.addEventListener('load', function(event){
 			if (event.target.status === 200){
+				console.log("== entered event.target.status");
 				var postTemplate = Handlebars.templates.postTemplate;
 				var postHTML = postTemplate({
 					Author: aLink,
@@ -63,6 +64,7 @@ accept[0].addEventListener('click', function() {
 				var postElem = document.querySelector('main.post-container');
 				postElem.insertAdjacentHTML('beforeend', postHTML);
 			} else {
+				console.log("== Never reached first if statement");
 				alert("Error storing photo: " + event.target.response);
 			}
 		});
