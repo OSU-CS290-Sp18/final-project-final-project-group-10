@@ -40,16 +40,17 @@ accept[0].addEventListener('click', function() {
 	if(!aLink || !link || !caption){
 		alert("Make sure to fill in all fields!");
 	} else {
-		var request = new XMLHttpRequest();
+		var postRequest = new XMLHttpRequest();
 		var url = "/addPhoto";
-		request.open('POST', url);
+		postRequest.open('POST', url);
 
-		var requestBody = JSON.stringify({
+		var body = {
 			Author: aLink,
 			Picture: link,
 			Likes: '2 likes',
 			Caption: caption
-		});
+		};
+		var requestBody = JSON.stringify(body);
 		console.log("==requestBody:",requestBody);
 
 		console.log("== URL:", url);
