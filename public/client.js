@@ -55,7 +55,7 @@ accept[0].addEventListener('click', function() {
 			};
 			var requestBody = JSON.stringify(body);
 			console.log("==requestBody:",requestBody);
-
+			postRequest.setRequestHeader('Content-Type', 'application/json');
 			console.log("== URL:", url);
 			postRequest.addEventListener('load', function(event){
 				console.log("Event:",event);
@@ -78,7 +78,7 @@ accept[0].addEventListener('click', function() {
 				}
 		});
 
-		postRequest.setRequestHeader('Content-Type', 'application/json');
+
 		postRequest.send(requestBody);
 
 		hidden[0].style.display = "none";
