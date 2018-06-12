@@ -35,7 +35,9 @@ app.get('/', function(req,res, next){
 });
 
 app.get('/addPhoto', function(req, res, next){
+  console.log("==in app.get");
   if (req.body && req.body.aLink && req.body.link && req.body.caption){
+    console.log("==in if statement of app.get('/addPhoto')");
     var photo = {
       Author: req.body.aLink,
       Picture: req.body.link,
