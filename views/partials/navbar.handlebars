@@ -1,0 +1,38 @@
+<nav class="navbar">
+  <ul class="nav-list">
+    <li class="navitem navlink"><button type="button" id="home-page-button"><i class="fas fa-home"></i></button></li>
+    <li class="navitem navlink"><button type="button" id="search-button"><i class="fas fa-search"></i></button></li>
+    <li class="navitem navlink"><button type="button" id="create-post-button"><i class="fas fa-plus-square"></i></button></li>
+    <li class="navitem navlink"><button type="button" id="activity-page-button"><i class="fas fa-heart"></i></button></li>
+    <li class="navitem navlink"><button type="button" id="user-profile-button"><i class="fas fa-user"></i></button></li>
+  </ul>
+</nav>
+<div id="modal-backdrop" class="hidden"></div>
+<div id="create-post-modal" class="hidden">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h3>Make a post!</h3>
+      <button type="button" class="modal-close-button">&times;</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="post-input-element">
+        <label for="post-attribution-input">Author</label>
+        <input type="text" id="post-attribution-input">
+      </div>
+      <div class="post-input-element">
+        <label for="post-photo-input">Photo URL</label>
+        <input type="text" id="post-photo-input">
+      </div>
+      <div class="post-input-element">
+        <label for="photo-caption-input">Photo caption</label>
+        <textarea id="photo-caption-input"></textarea>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="modal-cancel-button">Cancel</button>
+      <button type="button" class="modal-accept-button">Create Post</button>
+    </div>
+  </div>
+</div>
