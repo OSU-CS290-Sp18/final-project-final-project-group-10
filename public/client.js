@@ -54,11 +54,11 @@ accept[0].addEventListener('click', function() {
 		console.log("==requestBody:",requestBody);
 
 		console.log("== URL:", url);
-		request.addEventListener('load', function(event){
+		postRequest.addEventListener('load', function(event){
 			console.log("Event:",event);
 			// console.log("Event target:", event.target);
 			console.log("Event status:", event.target.status);
-			if (event.target.status === 404){
+			if (event.target.status === 200){
 				console.log("== entered event.target.status");
 				var postTemplate = Handlebars.templates.postTemplate;
 				var postHTML = postTemplate({
@@ -75,8 +75,8 @@ accept[0].addEventListener('click', function() {
 			}
 		});
 
-		request.setRequestHeader('Content-Type', 'application/json');
-		request.send(requestBody);
+		postRequest.setRequestHeader('Content-Type', 'application/json');
+		postRequest.send(requestBody);
 
 		hidden[0].style.display = "none";
 		hidden[1].style.display = "none";
