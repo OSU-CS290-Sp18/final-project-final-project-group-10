@@ -26,7 +26,7 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 // app.use(bodyParser.json());
-//app.use(express.static('public'));
+app.use(express.static('public'));
 
 app.get('/', function(req,res){
   res.status(200).render('postPage', {
