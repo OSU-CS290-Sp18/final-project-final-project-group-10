@@ -67,15 +67,15 @@ app.get('*', function(req,res){
   res.status(404).render('404');
 })
 
-// MongoClient.connect(mongoURL, function(err, client){
-//   if (err){
-//     throw err;
-//   }
-//   mongoDB = client.db(mongoDBName);
-//   app.listen(port, function () {
-//       console.log("== Server is listening on port", port);
-//     });
-// })
-app.listen(port, function () {
-    console.log("== Server is listening on port", port);
-  });
+MongoClient.connect(mongoURL, function(err, client){
+  if (err){
+    throw err;
+  }
+  mongoDB = client.db(mongoDBName);
+  app.listen(port, function () {
+      console.log("== Server is listening on port", port);
+    });
+})
+// app.listen(port, function () {
+//     console.log("== Server is listening on port", port);
+//   });
