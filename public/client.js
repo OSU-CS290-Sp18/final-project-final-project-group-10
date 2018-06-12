@@ -37,42 +37,45 @@ accept[0].addEventListener('click', function() {
 	var link = document.getElementById('post-photo-input').value.trim();
   var caption = document.getElementById('photo-caption-input').value.trim();
 
+	console.log("==aLink:",aLink);
+	console.log("==link:",link);
+	console.log("==caption:",caption);
 	if(!aLink || !link || !caption){
 		alert("Make sure to fill in all fields!");
 	} else {
-		var postRequest = new XMLHttpRequest();
-		var url = "/addPhoto";
-		postRequest.open('POST', url);
+			var postRequest = new XMLHttpRequest();
+			var url = "/addPhoto";
+			postRequest.open('POST', url);
 
-		var body = {
-			Author: aLink,
-			Picture: link,
-			Likes: '2 likes',
-			Caption: caption
-		};
-		var requestBody = JSON.stringify(body);
-		console.log("==requestBody:",requestBody);
+			var body = {
+				Author: aLink,
+				Picture: link,
+				Likes: '2 likes',
+				Caption: caption
+			};
+			var requestBody = JSON.stringify(body);
+			console.log("==requestBody:",requestBody);
 
-		console.log("== URL:", url);
-		postRequest.addEventListener('load', function(event){
-			console.log("Event:",event);
-			// console.log("Event target:", event.target);
-			console.log("Event status:", event.target.status);
-			if (event.target.status === 200){
-				console.log("== entered event.target.status");
-				var postTemplate = Handlebars.templates.postTemplate;
-				var postHTML = postTemplate({
-					Author: aLink,
-					Picture: link,
-					Likes: '2 likes',
-					Caption: caption
-				});
-				var postElem = document.querySelector('main.post-container');
-				postElem.insertAdjacentHTML('beforeend', postHTML);
-			} else {
-				console.log("== Never reached first if statement");
-				alert("Error storing photo: " + event.target.response);
-			}
+			console.log("== URL:", url);
+			postRequest.addEventListener('load', function(event){
+				console.log("Event:",event);
+				// console.log("Event target:", event.target);
+				console.log("Event status:", event.target.status);
+				if (event.target.status === 200){
+					console.log("== entered event.target.status");
+					var postTemplate = Handlebars.templates.postTemplate;
+					var postHTML = postTemplate({
+						Author: aLink,
+						Picture: link,
+						Likes: '2 likes',
+						Caption: caption
+					});
+					var postElem = document.querySelector('main.post-container');
+					postElem.insertAdjacentHTML('beforeend', postHTML);
+				} else {
+					console.log("== Never reached first if statement");
+					alert("Error storing photo: " + event.target.response);
+				}
 		});
 
 		postRequest.setRequestHeader('Content-Type', 'application/json');
