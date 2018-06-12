@@ -50,6 +50,7 @@ accept[0].addEventListener('click', function() {
 			Likes: '2 likes',
 			Caption: caption
 		});
+		console.log("==requestBody":requestBody);
 
 		console.log("== URL:", url);
 		request.addEventListener('load', function(event){
