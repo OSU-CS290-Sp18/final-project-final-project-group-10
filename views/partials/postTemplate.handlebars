@@ -4,17 +4,28 @@
   </div>
 
   <div class="post-photo-caption">
-    <div class="post-picture">
+    <div class="post-picture align-left">
       <img src="{{Picture}}">
     </div>
 
-    <div class="post-content">
-      <p class="post-likes">
-        <i class="far fa-heart"></i>{{Likes}}
-      </p>
-      <p class="post-caption">
-        {{Caption}}
-      </p>
+    <div class="post-caption align-right">
+    
+      {{Caption}}
+      
+    </div>
+    <br class="clear">
+  </div>
+  <div class="post-content">
+    <div class="likeHeart">
+      <i class="far fa-heart"></i>
+    </div>
+    <div class="likeCount">
+    
+      {{Likes}}
+      
+    </div>
+    <div class="likeLabel">
+      likes
     </div>
   </div>
 </article>
