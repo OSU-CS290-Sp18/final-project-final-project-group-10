@@ -29,6 +29,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
 app.get('/', function(req,res, next){
+  console.log("Visiting /");
   res.status(200).render('postPage', {
     data: postData}
   );
