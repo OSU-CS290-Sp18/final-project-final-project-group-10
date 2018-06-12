@@ -51,7 +51,9 @@ accept[0].addEventListener('click', function() {
 			Caption: caption
 		});
 
+		console.log("== URL:", url);
 		request.addEventListener('load', function(event){
+			console.log("Event status:", event.target.status);
 			if (event.target.status === 200){
 				console.log("== entered event.target.status");
 				var postTemplate = Handlebars.templates.postTemplate;
