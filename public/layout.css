@@ -22,8 +22,21 @@ header{
   text-align: center;
 }
 
+a{
+  color: #3E9D9E;
+  text-decoration: none;
+}
+
 header a{
   text-decoration: none;
+}
+
+i{
+  padding: 5px;
+}
+
+.fa-user-circle{
+  color: #3E9D9E;
 }
 
 .site-title{
@@ -53,6 +66,10 @@ article {
   border-radius: 10px;
   margin: 5%;
   padding: 2%;
+}
+img {
+  height: 400px;
+  width: auto;
 }
 
 .post-photo-caption{
@@ -222,20 +239,8 @@ li.navitem.navlink{
 }
 
 /* colors */
-.white{
-  color: #ffffff;
-}
-
-.white-bg{
-  background-color: #ffffff;
-}
-
-.purple{
-  color: #a448ce;
-}
-
-.purple-bg{
-  background-color: #a448ce;
+.red{
+  color: #FF1919;
 }
 
 /* embellishments */
