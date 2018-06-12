@@ -32,24 +32,54 @@ close[0].addEventListener('click', function () {
 var accept = document.getElementsByClassName('modal-accept-button');
 
 accept[0].addEventListener('click', function() {
-  var postTemplate = Handlebars.templates.postTemplate;
+  // var postTemplate = Handlebars.templates.postTemplate;
 	var aLink = document.getElementById('post-attribution-input').value.trim();
 	var link = document.getElementById('post-photo-input').value.trim();
   var caption = document.getElementById('photo-caption-input').value.trim();
 
-	if (aLink && link && caption){
-		console.log("== aLink:",aLink);
-		console.log("== link:",link);
-		console.log("== caption:",caption);
-		var postHTML = postTemplate({
+	if(!aLink || !link || !caption){
+		alert("Make sure to fill in all fields!");
+	} else {
+		var request = new XMLHttpRequest();
+		var url = "/addPhoto";
+		request.open("POST",url);
+
+		var requestBody = JSON.stringify({
 			Author: aLink,
 			Picture: link,
-			Likes: '100 likes',
+			Likes: '2 likes',
 			Caption: caption
 		});
 
-		var postElem = document.querySelector('main.post-container');
-		postElem.insertAdjacentHTML('beforeend', postHTML);
+		request.addEventListener('load', function(event){
+			if (event.taget.status === 200){
+				var postTemplate = Handlebars.templates.postTemplate;
+				var postHTML = postTemplate({
+					Author: aLink,
+					Picture: link,
+					Likes: '2 likes',
+					Caption: caption
+				});
+				var postElem = document.querySelector('main.post-container');
+				postElem.insertAdjacentHTML('beforeend', postHTML);
+			} else {
+				alert("Error storing photo: " + event.target.response);
+			}
+		});
+
+		request.setRequestHeader('Content-Type', 'application/json');
+		request.send(requestBody);
+
+		hidden[0].style.display = "none";
+		hidden[1].style.display = "none";
+	}
+	// if (aLink && link && caption){
+	// 	console.log("== aLink:",aLink);
+	// 	console.log("== link:",link);
+	// 	console.log("== caption:",caption);
+
+
+
 
 		// var post = document.createElement('article');
 		// var divAuthor = document.createElement('div');
@@ -118,12 +148,9 @@ accept[0].addEventListener('click', function() {
 	 //
 		// parent[0].appendChild(post);
 
-		hidden[0].style.display = "none";
-		hidden[1].style.display = "none";
-
-	} else {
-		alert("Make sure all boxes are filled!");
-	}
+	// } else {
+	// 	alert("Make sure all boxes are filled!");
+	// }
 });
 
 
