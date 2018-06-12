@@ -57,7 +57,7 @@ accept[0].addEventListener('click', function() {
 			console.log("Event:",event);
 			// console.log("Event target:", event.target);
 			console.log("Event status:", event.target.status);
-			if (event.target.status === 200){
+			if (event.target.status === 404){
 				console.log("== entered event.target.status");
 				var postTemplate = Handlebars.templates.postTemplate;
 				var postHTML = postTemplate({
