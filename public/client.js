@@ -54,6 +54,7 @@ accept[0].addEventListener('click', function() {
 
 		console.log("== URL:", url);
 		request.addEventListener('load', function(event){
+			console.log("Event target:", event.target);
 			console.log("Event status:", event.target.status);
 			if (event.target.status === 200){
 				console.log("== entered event.target.status");
