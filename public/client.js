@@ -42,7 +42,7 @@ accept[0].addEventListener('click', function() {
 	} else {
 		var request = new XMLHttpRequest();
 		var url = "/addPhoto";
-		request.open("POST", url);
+		request.open('POST', url);
 
 		var requestBody = JSON.stringify({
 			Author: aLink,
