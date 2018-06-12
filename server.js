@@ -18,7 +18,7 @@ var exphbs = require('express-handlebars');
 // var mongoDB = null;
 
 var app = express();
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3003;
 
 var postData = require('./postData');
 
