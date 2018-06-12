@@ -68,6 +68,7 @@ app.get('*', function(req,res){
 })
 
 MongoClient.connect(mongoURL, function(err, client){
+  console.log("== mongoURL:",mongoURL);
   if (err){
     console.log("== error connecting to mongo client");
     throw err;
