@@ -52,7 +52,7 @@ accept[0].addEventListener('click', function() {
 		});
 
 		request.addEventListener('load', function(event){
-			if (event.taget.status === 200){
+			if (event.target.status === 200){
 				var postTemplate = Handlebars.templates.postTemplate;
 				var postHTML = postTemplate({
 					Author: aLink,
