@@ -12,12 +12,6 @@
 *Nav bar background should be lighter gray
 */
 header{
-  background: -moz-linear-gradient(180deg, #863AA8 11%, #C355F5 89%);/* FF3.6+ */
-  background: -webkit-gradient(linear, 180deg, color-stop(11%, 863AA8), color-stop(89%, C355F5));/* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(180deg, #863AA8 11%, #C355F5 89%);/* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(180deg, #863AA8 11%, #C355F5 89%);/* Opera 11.10+ */
-  background: -ms-linear-gradient(180deg, #863AA8 11%, #C355F5 89%);/* IE10+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1301FE', endColorstr='#F4F60C', GradientType='1'); /* for IE */
   background: linear-gradient(180deg, #D0F3FB 11%, #3E9D9E 89%);/* W3C */
   text-align: center;
 }
@@ -51,30 +45,53 @@ i{
 body {
   font-family: 'Dosis', sans-serif;
   font-size: 1em;
-  background: -moz-radial-gradient(50% 50%, circle cover, #CCCCCC 0, #777777 100%);/* FF3.6+ */
-  /* background: -webkit-radial-gradient(50% 50%, circle cover, #CCCCCC 0, #777777 100%);/* Chrome10+,Safari5.1+ */ */
-  background: -o-radial-gradient(50% 50%, circle cover, #CCCCCC 0, #777777 100%);/* Opera 11.10+ */
-  background: -ms-radial-gradient(50% 50%, circle cover, #CCCCCC 0, #777777 100%);/* IE10+ */
-  background: radial-gradient(50% 50%, circle cover, #CCCCCC 0, #777777 100%);/* W3C */
   margin: 0px;
   color: white;
 }
 
 article {
   background-color: #D0F4DD;
-  /* background-color: rgba(164, 72, 206, .8); */
   border-radius: 10px;
   margin: 5%;
   padding: 2%;
 }
 img {
-  height: 400px;
+  height: 500px;
   width: auto;
 }
 
 .post-photo-caption{
   color: black;
   background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.post-content div{
+  display: inline;
+}
+
+.post-content{
+  color: #3E9D9E;
+  font-size: 16pt;
+}
+
+.post-caption{
+  font-size: 45pt;
+  color: #777777;
+  width: 800px;
+}
+
+.align-left{
+  float: left;
+}
+
+.align-right{
+  float: right;
+}
+
+.clear{
+  clear: both;
 }
 
 ul{
@@ -113,12 +130,6 @@ li.navitem.navlink{
   position: fixed;
   bottom: 0px;
   width: 100%;
-  background: -moz-linear-gradient(0deg, #863AA8 11%, #C355F5 89%);/* FF3.6+ */
-  background: -webkit-gradient(linear, 0deg, color-stop(11%, 863AA8), color-stop(89%, C355F5));/* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(0deg, #863AA8 11%, #C355F5 89%);/* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(0deg, #863AA8 11%, #C355F5 89%);/* Opera 11.10+ */
-  background: -ms-linear-gradient(0deg, #863AA8 11%, #C355F5 89%);/* IE10+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1301FE', endColorstr='#F4F60C', GradientType='1'); /* for IE */
   background: linear-gradient(180deg, #D0F3FB 11%, #3E9D9E 89%);/* W3C */
 }
 
@@ -248,6 +259,7 @@ li.navitem.navlink{
   background: linear-gradient(180deg, #863AA8 11%, #C355F5 89%);
 }
 
+/* error */
 .error-container{
   margin-top: 50px;
   text-align: center;
