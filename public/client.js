@@ -44,7 +44,7 @@ accept[0].addEventListener('click', function() {
 		alert("Make sure to fill in all fields!");
 	} else {
 			var postRequest = new XMLHttpRequest();
-			var url = "/addPhoto";
+			var url = '/addPhoto';
 			postRequest.open("POST", url);
 
 			var body = {
