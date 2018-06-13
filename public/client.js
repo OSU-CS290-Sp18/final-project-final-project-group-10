@@ -185,16 +185,6 @@ for (var i = 0; i < elems.length; i++) {
   allElems.push(elems[i]);
 }
 
-/* names like stat will need to be changed
-function likePost(stat){
-  var likeCount = parseInt(stat.getElementByClassName('stat')[0].textContent);
-  likeCount += 1;
-  stat.getElementByClassName('stat')[0].textContent = likeCount;
-
-  /* call function to add red class to the heart
-}
-*/
-
 /* search fuction
 
 var search = document.getElementById('navbar-search-input');
