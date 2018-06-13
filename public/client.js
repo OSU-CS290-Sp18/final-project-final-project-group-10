@@ -49,9 +49,9 @@ accept[0].addEventListener('click', function() {
 	var link = document.getElementById('post-photo-input').value.trim();
   var caption = document.getElementById('photo-caption-input').value.trim();
 
-	console.log("==aLink:",aLink);
-	console.log("==link:",link);
-	console.log("==caption:",caption);
+	// console.log("==aLink:",aLink);
+	// console.log("==link:",link);
+	// console.log("==caption:",caption);
 	if(!aLink || !link || !caption){
 		alert("Make sure to fill in all fields!");
 	} else {
