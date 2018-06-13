@@ -45,20 +45,22 @@ accept[0].addEventListener('click', function() {
 	} else {
 			var postRequest = new XMLHttpRequest();
 			var url = "/addPhoto";
-			postRequest.open('POST', url);
+			postRequest.open("POST", url);
 
 			var body = {
-				Author: aLink,
-				Picture: link,
-				Likes: '2 likes',
-				Caption: caption
+				author: aLink,
+				picture: link,
+				likes: '2 likes',
+				caption: caption
 			};
+
 			var requestBody = JSON.stringify(body);
-			console.log("==requestBody:",requestBody);
+
+			// console.log("==requestBody:",requestBody);
 			postRequest.setRequestHeader('Content-Type', 'application/json');
-			console.log("== URL:", url);
+			// console.log("== URL:", url);
 			postRequest.addEventListener('load', function(event){
-				console.log("Event:",event);
+				// console.log("Event:",event);
 				// console.log("Event target:", event.target);
 				console.log("Event status:", event.target.status);
 				if (event.target.status === 200){
@@ -73,8 +75,8 @@ accept[0].addEventListener('click', function() {
 					var postElem = document.querySelector('main.post-container');
 					postElem.insertAdjacentHTML('beforeend', postHTML);
 				} else {
-					console.log("== Never reached first if statement");
-					alert("Error storing photo: " + event.target.response);
+						console.log("== Never reached first if statement");
+						alert("Error storing photo: " + event.target.response);
 				}
 		});
 
