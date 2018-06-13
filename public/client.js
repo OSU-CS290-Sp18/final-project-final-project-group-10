@@ -48,7 +48,7 @@ accept[0].addEventListener('click', function() {
 			postRequest.open("POST", url);
 
 			var body = {
-				author: aLink,
+				author: aLink.value,
 				picture: link,
 				likes: '2 likes',
 				caption: caption
