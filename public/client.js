@@ -15,6 +15,18 @@ function callOnce() {
   document.getElementById('post-photo-input').value = "";
 	document.getElementById('photo-caption-input').value = "";
 }
+
+function likePost(likeCount){
+  var numLikes = parseInt(likeCount.getElementByClassName('likeCount')[0].textContent);
+  numLikes += 1;
+  stat.getElementByClassName('likeCount')[0].textContent = numLikes;
+
+  var heart = parseInt(likeCount.getElementByClassName('fa-heart')[0].textContent);
+  heart.classList.add('red');
+  heart.classList.remove('far');
+  heart.classList.add('fas');
+}
+
 /* control the input box */
 var cancel = document.getElementsByClassName('modal-cancel-button');
 cancel[0].addEventListener('click', function () {
@@ -50,7 +62,7 @@ accept[0].addEventListener('click', function() {
 			var body = {
 				author: aLink,
 				picture: link,
-				likes: '2 likes',
+				likes: '2',
 				caption: caption
 			};
 
@@ -69,7 +81,7 @@ accept[0].addEventListener('click', function() {
 					var postHTML = postTemplate({
 						Author: aLink,
 						Picture: link,
-						Likes: '2 likes',
+						Likes: '2',
 						Caption: caption
 					});
 					var postElem = document.querySelector('main.post-container');
@@ -172,16 +184,6 @@ var allElems = [];
 for (var i = 0; i < elems.length; i++) {
   allElems.push(elems[i]);
 }
-
-/* names like stat will need to be changed
-function likePost(stat){
-  var likeCount = parseInt(stat.getElementByClassName('stat')[0].textContent);
-  likeCount += 1;
-  stat.getElementByClassName('stat')[0].textContent = likeCount;
-
-  /* call function to add red class to the heart
-}
-*/
 
 /* search fuction
 
