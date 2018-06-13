@@ -35,53 +35,53 @@ app.get('/', function(req,res, next){
   );
 });
 
-app.get('/addPhoto', function(req, res, next){
-  console.log("==in app.get");
-  console.log("==req.body.aLink",req.body.aLink);
-  if (req.body && req.body.aLink && req.body.link && req.body.caption){
-    console.log("==in if statement of app.get('/addPhoto')");
-    var photo = {
-      Author: req.body.aLink,
-      Picture: req.body.link,
-      Likes: '2 likes',
-      Caption: req.body.caption
-    };
+//app.get('/addPhoto', function(req, res, next){
+  //console.log("==in app.get");
+  //console.log("==req.body.aLink",req.body.aLink);
+  //if (req.body && req.body.aLink && req.body.link && req.body.caption){
+    //console.log("==in if statement of app.get('/addPhoto')");
+    //var photo = {
+      //Author: req.body.aLink,
+      //Picture: req.body.link,
+      //Likes: '2 likes',
+      //Caption: req.body.caption
+    //};
 
-    var photoCollection = mongoDB.collection('photos');
-    photoCollection.insertOne(
-      {$push: {photos: photo}},
-      function(err, result) {
-        if (err){
-          res.status(500).send("error inserting photo into DB.")
-        } else {
-          console.log("== mongo insert result: ", result);
-          if (result.matchedCount > 0){
-            res.status(200).end();
-          } else {
-            next();
-          }
-        }
-      }
-    );
-  } else {
-    res.status(400).send("Request needs a JSON body with author, picture, and caption.")
-  }
-});
+    //var photoCollection = mongoDB.collection('photos');
+    //photoCollection.insertOne(
+      //{$push: {photos: photo}},
+      //function(err, result) {
+        //if (err){
+          //res.status(500).send("error inserting photo into DB.")
+        //} else {
+          //console.log("== mongo insert result: ", result);
+          //if (result.matchedCount > 0){
+            //res.status(200).end();
+          //} else {
+            //next();
+          //}
+        //}
+      //}
+    //);
+  //} else {
+    //res.status(400).send("Request needs a JSON body with author, picture, and caption.")
+  //}
+//});
 app.get('*', function(req,res){
   res.status(404).render('404');
 })
 
-MongoClient.connect(mongoURL, function(err, client){
-  console.log("== mongoURL:",mongoURL);
-  if (err){
-    console.log("== error connecting to mongo client");
-    throw err;
-  }
-  mongoDB = client.db(mongoDBName);
-  app.listen(port, function () {
-      console.log("== Server is listening on port", port);
-    });
-})
-// app.listen(port, function () {
-//     console.log("== Server is listening on port", port);
-//   });
+//MongoClient.connect(mongoURL, function(err, client){
+  //console.log("== mongoURL:",mongoURL);
+  //if (err){
+    //console.log("== error connecting to mongo client");
+    //throw err;
+  //}
+  //mongoDB = client.db(mongoDBName);
+  //app.listen(port, function () {
+    //  console.log("== Server is listening on port", port);
+    //});
+//})
+ app.listen(port, function () {
+     console.log("== Server is listening on port", port);
+ });
