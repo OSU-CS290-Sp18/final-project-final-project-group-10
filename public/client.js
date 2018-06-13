@@ -1,11 +1,5 @@
 /*client side java
 */
-/* when button is clicked */
-
-var hidden = document.getElementsByClassName('hidden');
-var button = document.getElementById('create-post-button');
-button.addEventListener('click', callOnce);
-
 function callOnce() {
 	console.log('Button clicked!');
 	hidden[0].style.display = "block";
@@ -26,6 +20,13 @@ function likePost(likeCount){
   heart.classList.remove('far');
   heart.classList.add('fas');
 }
+
+window.addEventListener('DOMContentLoaded', function(){
+/* when button is clicked */
+
+var hidden = document.getElementsByClassName('hidden');
+var button = document.getElementById('create-post-button');
+button.addEventListener('click', callOnce);
 
 /* control the input box */
 var cancel = document.getElementsByClassName('modal-cancel-button');
@@ -189,14 +190,15 @@ accept[0].addEventListener('click', function() {
 	// } else {
 	// 	alert("Make sure all boxes are filled!");
 	// }
+	});
+
+
+	var elems = document.getElementsByClassName('post');
+	var allElems = [];
+	for (var i = 0; i < elems.length; i++) {
+  		allElems.push(elems[i]);
+	}
 });
-
-
-var elems = document.getElementsByClassName('post');
-var allElems = [];
-for (var i = 0; i < elems.length; i++) {
-  allElems.push(elems[i]);
-}
 
 /* search fuction
 
