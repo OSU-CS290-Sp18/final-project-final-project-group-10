@@ -56,7 +56,7 @@ accept[0].addEventListener('click', function() {
 
 			var requestBody = JSON.stringify(body);
 
-			// console.log("==requestBody:",requestBody);
+			console.log("==requestBody:",requestBody);
 			postRequest.setRequestHeader('Content-Type', 'application/json');
 			// console.log("== URL:", url);
 			postRequest.addEventListener('load', function(event){
