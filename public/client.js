@@ -62,7 +62,7 @@ accept[0].addEventListener('click', function() {
 			var body = {
 				author: aLink,
 				picture: link,
-				likes: '2 likes',
+				likes: '2',
 				caption: caption
 			};
 
@@ -81,7 +81,7 @@ accept[0].addEventListener('click', function() {
 					var postHTML = postTemplate({
 						Author: aLink,
 						Picture: link,
-						Likes: '2 likes',
+						Likes: '2',
 						Caption: caption
 					});
 					var postElem = document.querySelector('main.post-container');
