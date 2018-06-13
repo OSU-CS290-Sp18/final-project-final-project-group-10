@@ -76,6 +76,10 @@ img {
   font-size: 16pt;
 }
 
+.post-content button{
+  color: #3E9D9E;
+}
+
 .post-caption{
   font-size: 45pt;
   color: #777777;
