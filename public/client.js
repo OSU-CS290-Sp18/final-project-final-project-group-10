@@ -48,10 +48,10 @@ accept[0].addEventListener('click', function() {
 			postRequest.open("POST", url);
 
 			var body = {
-				author: aLink.value,
-				picture: link.value,
+				author: aLink,
+				picture: link,
 				likes: '2 likes',
-				caption: caption.value
+				caption: caption
 			};
 
 			var requestBody = JSON.stringify(body);
