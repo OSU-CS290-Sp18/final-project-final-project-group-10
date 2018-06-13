@@ -49,9 +49,9 @@ accept[0].addEventListener('click', function() {
 
 			var body = {
 				author: aLink.value,
-				picture: link,
+				picture: link.value,
 				likes: '2 likes',
-				caption: caption
+				caption: caption.value
 			};
 
 			var requestBody = JSON.stringify(body);
