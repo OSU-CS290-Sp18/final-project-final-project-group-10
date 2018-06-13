@@ -44,10 +44,10 @@ close[0].addEventListener('click', function () {
 var accept = document.getElementsByClassName('modal-accept-button');
 
 accept[0].addEventListener('click', function() {
-  // var postTemplate = Handlebars.templates.postTemplate;
+  	var postTemplate = Handlebars.templates.postTemplate;
 	var aLink = document.getElementById('post-attribution-input').value.trim();
 	var link = document.getElementById('post-photo-input').value.trim();
-  var caption = document.getElementById('photo-caption-input').value.trim();
+  	var caption = document.getElementById('photo-caption-input').value.trim();
 
 	// console.log("==aLink:",aLink);
 	// console.log("==link:",link);
@@ -55,45 +55,58 @@ accept[0].addEventListener('click', function() {
 	if(!aLink || !link || !caption){
 		alert("Make sure to fill in all fields!");
 	} else {
-			var postRequest = new XMLHttpRequest();
-			var url = '/addPhoto';
-			postRequest.open("POST", url);
+		if (aLink && link && caption){
+			console.log("== aLink:", aLink);
+			console.log("== link:", link);
+			console.log("== caption:", caption);
+			var postHTML = postTemplate({
+				Author: aLink,
+				Picture: link,
+				Likes: '100',
+				Caption: caption
+			});
+			
+			var postElem = document.querySelector('main.post-container');
+			postElem.insertAdjacentHTML('beforeend', postHTML);
+	//		var postRequest = new XMLHttpRequest();
+	//		var url = '/addPhoto';
+	//		postRequest.open("POST", url);
 
-			var body = {
-				author: aLink,
-				picture: link,
-				likes: '2',
-				caption: caption
-			};
+	//		var body = {
+	//			author: aLink,
+	//			picture: link,
+	//			likes: '2',
+	//			caption: caption
+	//		};
 
-			var requestBody = JSON.stringify(body);
+	//		var requestBody = JSON.stringify(body);
 
-			console.log("==requestBody:",requestBody);
-			postRequest.setRequestHeader('Content-Type', 'application/json');
+	//		console.log("==requestBody:",requestBody);
+	//		postRequest.setRequestHeader('Content-Type', 'application/json');
 			// console.log("== URL:", url);
-			postRequest.addEventListener('load', function(event){
+	//		postRequest.addEventListener('load', function(event){
 				// console.log("Event:",event);
 				// console.log("Event target:", event.target);
-				console.log("Event status:", event.target.status);
-				if (event.target.status === 200){
-					console.log("== entered event.target.status");
-					var postTemplate = Handlebars.templates.postTemplate;
-					var postHTML = postTemplate({
-						Author: aLink,
-						Picture: link,
-						Likes: '2',
-						Caption: caption
-					});
-					var postElem = document.querySelector('main.post-container');
-					postElem.insertAdjacentHTML('beforeend', postHTML);
-				} else {
-						console.log("== Never reached first if statement");
-						alert("Error storing photo: " + event.target.response);
-				}
-		});
+	//			console.log("Event status:", event.target.status);
+	//			if (event.target.status === 200){
+	//				console.log("== entered event.target.status");
+	//				var postTemplate = Handlebars.templates.postTemplate;
+	//				var postHTML = postTemplate({
+	//					Author: aLink,
+	//					Picture: link,
+	//					Likes: '2',
+	//					Caption: caption
+	//				});
+	//				var postElem = document.querySelector('main.post-container');
+	//				postElem.insertAdjacentHTML('beforeend', postHTML);
+	//			} else {
+	//					console.log("== Never reached first if statement");
+	//					alert("Error storing photo: " + event.target.response);
+	//			}
+	//	});
 
 
-		postRequest.send(requestBody);
+//		postRequest.send(requestBody);
 
 		hidden[0].style.display = "none";
 		hidden[1].style.display = "none";
