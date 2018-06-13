@@ -15,6 +15,18 @@ function callOnce() {
   document.getElementById('post-photo-input').value = "";
 	document.getElementById('photo-caption-input').value = "";
 }
+
+function likePost(likeCount){
+  var numLikes = parseInt(likeCount.getElementByClassName('likeCount')[0].textContent);
+  numLikes += 1;
+  stat.getElementByClassName('likeCount')[0].textContent = numLikes;
+
+  var heart = parseInt(likeCount.getElementByClassName('fa-heart')[0].textContent);
+  heart.classList.add('red');
+  heart.classList.remove('far');
+  heart.classList.add('fas');
+}
+
 /* control the input box */
 var cancel = document.getElementsByClassName('modal-cancel-button');
 cancel[0].addEventListener('click', function () {
